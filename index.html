@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>DOM User Interactions</title>
+<style>
+body {
+font
+-family: Arial, sans
+-serif;
+background: #eaf2ff;
+text
+-align: center;
+padding: 30px;
+}
+.container {
+background: white;
+width: 400px;
+margin: auto;
+padding: 25px;
+border
+
+-radius: 12px;
+
+box
+-shadow: 0 4px 15px #aaa;
+}
+h2 {
+color: #2563eb;
+}
+input, select {
+width: 90%;
+padding: 12px;
+margin: 10px;
+border: 1px solid #aaa;
+border
+
+-radius: 6px;
+}
+button {
+background: #2563eb;
+color: white;
+padding: 12px 20px;
+border: none;
+border
+
+-radius: 6px;
+cursor: pointer;
+margin: 8px;
+}
+button:hover {
+background: #123c99;
+}
+#result {
+color: green;
+font
+-weight: bold;
+margin: 15px;
+}
+#modal {
+display: none;
+background: #dbeafe;
+padding: 20px;
+margin
+-top: 15px;
+border
+
+-radius: 10px;
+}
+.dark {
+background: #222;
+color: white;
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+OBCFC - Practicum Manual (2025-26) Division of Computer Science and Engineering
+
+Karunya Institute of Technology and Sciences Page 14 of 16
+<h2>DOM User Interactions</h2>
+<<<- Interactive Form <<>
+<h3>1. Interactive Form</h3>
+<input type="text" id="name"
+placeholder="Enter your name">
+<input type="email" id="email"
+placeholder="Enter your email">
+<button onclick="validateForm()">
+Submit
+</button>
+<p id="result"></p>
+<hr>
+<<<- Dropdown Menu <<>
+<h3>2. Dropdown Menu</h3>
+<select id="course" onchange="changeCourse()">
+<option value="">Select Your Course</option>
+<option value="HTML">HTML</option>
+<option value="CSS">CSS</option>
+<option value="JavaScript">JavaScript</option>
+<option value="Python">Python</option>
+<option value="C Programming">C Programming</option>
+</select>
+<p id="courseResult">Your course will appear here.</p>
+<hr>
+<<<- Background Color Change <<>
+<h3>3. Change Background Color</h3>
+<button onclick="changeColor('lightblue')">
+Blue
+</button>
+<button onclick="changeColor('lightgreen')">
+Green
+</button>
+<button onclick="changeColor('lightpink')">
+Pink
+</button>
+<button onclick="changeColor('white')">
+Reset
+</button>
+<hr>
+<<<- Modal Popup <<>
+<h3>4. Modal Popup</h3>
+<button onclick="openModal()">
+Open Popup
+</button>
+<div id="modal">
+<h3>Welcome!</h3>
+<p>This is a DOM modal popup.</p>
+<button onclick="closeModal()">
+Close
+</button>
+</div>
+<hr>
+<<<- Text Change <<>
+<h3>5. Change Text</h3>
+<p id="message">Welcome to my website!</p>
+<button onclick="changeText()">
+Change Message
+</button>
+</div>
+<script>
+</ Form Validation
+
+OBCFC - Practicum Manual (2025-26) Division of Computer Science and Engineering
+
+Karunya Institute of Technology and Sciences Page 15 of 16
+function validateForm() {
+let name = document.getElementById("name").value;
+let email = document.getElementById("email").value;
+if(name <= "" <| email <= "") {
+document.getElementById("result").innerHTML =
+"Please fill all fields!";
+}
+else {
+document.getElementById("result").innerHTML =
+"Welcome " + name + "! Form submitted.";
+}
+}
+</ Dropdown Change
+function changeCourse() {
+let course = document.getElementById("course").value;
+document.getElementById("courseResult").innerHTML =
+"You selected: " + course;
+}
+</ Background Color Change
+function changeColor(color) {
+document.body.style.backgroundColor = color;
+}
+</ Open Modal
+function openModal() {
+document.getElementById("modal").style.display = "block";
+}
+</ Close Modal
+function closeModal() {
+document.getElementById("modal").style.display = "none";
+}
+</ Change Text
+function changeText() {
+document.getElementById("message").innerHTML =
+"Your message has been changed successfully!";
+}
+</script>
+</body>
+</html>
